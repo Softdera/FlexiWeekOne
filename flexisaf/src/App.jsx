@@ -1,4 +1,7 @@
-const books = [
+import './App.css'
+
+function App() {
+  const books = [
     { id: 1, title: "1984", author: "George Orwell", genre: "Fiction", price: 45 },
     { id: 2, title: "Sapiens", author: "Yuval Noah Harari", genre: "Non-fiction", price: 90 },
     { id: 3, title: "To Kill a Mockingbird", author: "Harper Lee", genre: "Fiction", price: 5 },
@@ -71,3 +74,24 @@ document.getElementById('search-title').addEventListener('click', () => {
 displayBooks(books);
 
 document.getElementById('calculate-price').addEventListener('click', () => calculateTotalPrice());
+
+
+  return (
+    <>
+     <h1>Book Management App</h1>
+    
+    <div className="actions">
+        <input type="text" id="search-bar" placeholder="Search by title, author, or genre..."></input>
+        <button id="search-title">Search</button>
+        <button id="calculate-price">Price of All Books</button>
+        <button id="display-transformed">Display Transformed Books</button>
+    </div>
+    
+    <div className="book-list"></div>
+    
+    <p id="result"></p>
+    </>
+  )
+}
+
+export default App
